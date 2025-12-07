@@ -41,7 +41,7 @@ jobs:
 
       #7. Quality Guard: SonarCloud Scan
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarqube-scan-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Auto-generated GitHub token
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}    # SonarCloud token stored in GitHub Secrets
