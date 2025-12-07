@@ -40,7 +40,7 @@ jobs:
 
       #6. Quality check with tests
       - name: Run Unit Tests
-        run: npx ng test --watch=false --browsers=chromium --code-coverage                    # Run test script defined in package.json
+        run: npx ng test --watch=false --browsers=chromium --coverage                    # Run test script defined in package.json
 
       #7. Quality Guard: SonarCloud Scan
       - name: SonarCloud Scan
