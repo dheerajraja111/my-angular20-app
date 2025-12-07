@@ -25,9 +25,17 @@ jobs:
       - name: Install Dependencies
         run: npm install                   # Install npm dependencies
 
+      #4. Install browser for CI tests ---
+      - name: Install Playwright Browsers
+        run: npx playwright install chromium        # Install Playwright browsers for testing
+
       #4. Quality check with linting
       - name: Run Linting
         run: npm run lint                  # Run linting script defined in package.json
+
+      #5. Quality check with tests
+      - name: Run Unit Tests
+        run: npx ng test --watch=false --browsers=chromium                      # Run test script defined in package.json
 
       #5. Set up Docker Buildx (for building multi-platform images & Advanced caching)
       - name: Set up Docker Buildx
